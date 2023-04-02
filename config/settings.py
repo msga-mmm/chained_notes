@@ -49,7 +49,7 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
-ROOT_URLCONF = "chained_notes.urls"
+ROOT_URLCONF = "config.urls"
 
 TEMPLATES = [
     {
@@ -67,7 +67,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = "chained_notes.wsgi.application"
+WSGI_APPLICATION = "config.wsgi.application"
 
 
 # Database

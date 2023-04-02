@@ -1,0 +1,31 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Local development settings
+config/settings/local.py
+
+# Django test database
+*.db
+
+# Media files
+media/
+
+# Static files
+static/
+
+# Virtual environment
+venv/
+
+# Dependency directories
+pip-wheel-metadata/
+.venv/
+
+# IDE-specific files
+.vscode/
+.idea/
+
+# Logs
+logs/
+*.log
