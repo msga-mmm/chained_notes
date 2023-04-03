@@ -29,3 +29,6 @@ pip-wheel-metadata/
 # Logs
 logs/
 *.log
+
+# Local enviroment variables
+.env

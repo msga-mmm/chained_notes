@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "chained-notes"
+version = "0.1.0"
+description = "An application for chained notes."
+authors = []
+license = "MIT"
+readme = "README.md"
+packages = []
+
+[tool.poetry.dependencies]
+python = "^3.10"
+Django = "^4.2"
+django-environ = "^0.10.0"
+psycopg-binary = "^3.1.8"
+psycopg = "^3.1.8"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
