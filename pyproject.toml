@@ -11,9 +11,9 @@ packages = []
 python = "^3.10"
 Django = "^4.2"
 django-environ = "^0.10.0"
-psycopg-binary = "^3.1.8"
-psycopg = "^3.1.8"
 djangorestframework = "^3.14.0"
+psycopg = "^3.1.8"
+psycopg-binary = "^3.1.8"
 
 
 [build-system]
