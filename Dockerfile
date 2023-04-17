@@ -1,5 +1,7 @@
 FROM python:alpine
 
+WORKDIR /app
+
 COPY pyproject.toml poetry.lock .
 
 # Install Poetry and project dependencies

@@ -20,8 +20,11 @@ services:
     ports:
       - ${APPLICATION_PORT}:8000
     volumes:
-      - ./chained_notes/:/chained_notes
+      - ./:/app
     env_file:
       - .env
+    environment:
+      # avoid output buffering for realtime logging
+      PYTHONUNBUFFERED: 1
     depends_on:
       - database
