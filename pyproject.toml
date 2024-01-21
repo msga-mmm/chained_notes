@@ -19,6 +19,8 @@ psycopg-binary = "^3.1.8"
 [tool.poetry.group.dev.dependencies]
 pylint = "^3.0.3"
 black = "^23.12.1"
+isort = "^5.13.2"
+pylint-django = "^2.5.5"
 
 [build-system]
 requires = ["poetry-core"]

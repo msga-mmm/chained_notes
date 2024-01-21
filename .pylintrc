@@ -1,0 +1,24 @@
+[MASTER]
+ignore=migrations
+load-plugins=pylint_django
+django-settings-module=config.settings
+
+[MESSAGES CONTROL]
+# Disabled:
+#
+# missing-module-docstring,missing-class-docstring:
+#     - to avoid having to documentate class Meta.
+#
+# too-few-public-methods:
+#     - to allow classes withot fields when using class Meta:
+#         - https://stackoverflow.com/questions/14027417/what-does-pylints-too-few-public-methods-message-mean
+disable=missing-module-docstring,missing-class-docstring,too-few-public-methods
+
+[DESIGN]
+# Changes
+#
+# max-parents:
+#     - Increased from the default 7 to 15 since viewsets classes inherits from
+#       django and rest_framework classes with too many parents
+#         - https://stackoverflow.com/questions/22834393/understanding-too-many-ancestors-from-pylint
+max-parents=15

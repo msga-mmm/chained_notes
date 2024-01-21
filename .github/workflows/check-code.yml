@@ -6,6 +6,21 @@ on:
       - main
 
 jobs:
+  check-format:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v4
+
+      - name: Install poetry
+        run: pip install poetry
+
+      - name: Install dependencies
+        run: poetry install
+
+      - name: Check code format
+        run: make check-format
+
   lint:
     runs-on: ubuntu-latest
     steps:

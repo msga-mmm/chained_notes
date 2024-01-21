@@ -20,6 +20,6 @@ from django.urls import include, path
 from chained_notes.interfaces.api.urls import urlpatterns
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('api/', include(urlpatterns)),
+    path("admin/", admin.site.urls),
+    path("api/", include(urlpatterns)),
 ]
