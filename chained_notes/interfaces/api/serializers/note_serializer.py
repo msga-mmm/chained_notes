@@ -1,5 +1,6 @@
-from chained_notes.adapters.database.models import Note
 from rest_framework import serializers
+
+from chained_notes.adapters.database.models import Note
 
 
 class NoteSerializer(serializers.ModelSerializer):
