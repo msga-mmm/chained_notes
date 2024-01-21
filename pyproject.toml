@@ -16,6 +16,9 @@ psycopg = "^3.1.8"
 psycopg-binary = "^3.1.8"
 
 
+[tool.poetry.group.dev.dependencies]
+pylint = "^3.0.3"
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
