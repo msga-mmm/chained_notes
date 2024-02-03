@@ -8,17 +8,17 @@ readme = "README.md"
 packages = []
 
 [tool.poetry.dependencies]
-python = "^3.10"
-Django = "^4.2"
-django-environ = "^0.10.0"
+python = "^3.11"
+Django = "^5.0.1"
+django-environ = "^0.11.2"
 djangorestframework = "^3.14.0"
-psycopg = "^3.1.8"
-psycopg-binary = "^3.1.8"
+psycopg = "^3.1.17"
+psycopg-binary = "^3.1.17"
 
 
 [tool.poetry.group.dev.dependencies]
 pylint = "^3.0.3"
-black = "^23.12.1"
+black = "^24.1.1"
 isort = "^5.13.2"
 pylint-django = "^2.5.5"
 
