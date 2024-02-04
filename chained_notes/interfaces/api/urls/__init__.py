@@ -1,7 +1,6 @@
-from django.urls import include, path
+from rest_framework.routers import DefaultRouter
 
-from .note_url import urlpatterns as note_urlpatterns
+import note_url
 
-urlpatterns = [
-    path("", include(note_urlpatterns)),
-]
+router = DefaultRouter()
+router.registry.extend(note_url.router.registry)
