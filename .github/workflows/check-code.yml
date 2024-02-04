@@ -15,8 +15,13 @@ jobs:
       - name: Install poetry
         run: pip install poetry
 
-      - name: Install dependencies
+      - name: Install poetry dependencies
         run: poetry install
+
+      - uses: actions/setup-node@v4
+
+      - name: Install npm dependencies
+        run: npm install
 
       - name: Check code format
         run: make check-format

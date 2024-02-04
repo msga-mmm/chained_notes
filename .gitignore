@@ -32,3 +32,6 @@ logs/
 
 # Local enviroment variables
 .env
+
+# JavaScript/TypeScript packages
+node_modules

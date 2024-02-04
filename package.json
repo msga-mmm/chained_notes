@@ -1,0 +1,14 @@
+{
+  "name": "chained_notes",
+  "version": "1.0.0",
+  "description": "An application for chained notes.",
+  "scripts": {
+    "format": "prettier --write .",
+    "check-format": "prettier --check ."
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "prettier": "^3.2.5"
+  }
+}
