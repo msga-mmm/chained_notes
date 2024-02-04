@@ -18,9 +18,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 
-from chained_notes.interfaces.api.urls import urlpatterns
+from chained_notes.interfaces.api.urls import router
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("api/", include(urlpatterns)),
+    path("api/", include(router.urls)),
 ]
