@@ -6,7 +6,7 @@ format:
 	poetry run isort config chained_notes
 	poetry run black config chained_notes
 
-    # yaml, json code
+	# yaml, json code
 	npm run format
 
 check-format:
