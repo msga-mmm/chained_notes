@@ -9,4 +9,7 @@ check-format:
 	poetry run isort config chained_notes --check
 	poetry run black config chained_notes --check
 
-.PHONY: lint format check-format
+check-types:
+	poetry run pyright
+
+.PHONY: lint format check-format check-types
