@@ -2,7 +2,7 @@ openapi: 3.0.3
 info:
   title: Chained Notes API
   version: 1.0.0
-  description: An application for chained notes.
+  description: An application for chained notes....
 paths:
   /api/notes/:
     get:
