@@ -161,7 +161,7 @@ SIMPLE_JWT = {
 
 SPECTACULAR_SETTINGS = {
     "TITLE": "Chained Notes API",
-    "DESCRIPTION": "An application for chained notes...",
+    "DESCRIPTION": "An application for chained notes.",
     "SERVE_INCLUDE_SCHEMA": False,
     "VERSION": "1.0.0",
     "COMPONENT_SPLIT_REQUEST": True,
