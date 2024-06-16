@@ -25,7 +25,10 @@ generate-openapi-schema:
 	poetry run python manage.py spectacular --color --file chained_notes/infrastructure/api/schemas/openapi-schema.yml
 
 check-openapi-schema:
-	OPENAPI_SCHEMA_FILE_PATH="chained_notes/infrastructure/api/schemas/openapi-schema.yml"
-	git diff --exit-code --quiet origin/main -- "$OPENAPI_SCHEMA_FILE_PATH"
+	make generate-openapi-schema
+
+	git add chained_notes/infrastructure/api/schemas/openapi-schema.yml
+	git diff --cached --exit-code --quiet
+	git diff --exit-code --quiet -- chained_notes/infrastructure/api/schemas/openapi-schema.yml
 
 .PHONY: lint lint-fix format check-format check-types generate-openapi-schema
