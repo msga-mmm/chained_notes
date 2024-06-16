@@ -8,6 +8,21 @@ on:
 jobs:
   update-openapi-schema:
     runs-on: ubuntu-latest
+    permissions:
+      actions: write
+      pages: write
+      checks: write
+      issues: write
+      contents: write
+      id-token: write
+      packages: write
+      statuses: write
+      deployments: write
+      discussions: write
+      attestations: write
+      pull-requests: write
+      security-events: write
+      repository-projects: write
     env:
       OPENAPI_SCHEMA_FILE_PATH: chained_notes/infrastructure/api/schemas/openapi-schema.yml
     steps:
