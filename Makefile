@@ -1,21 +1,16 @@
 lint:
-	# TODO: solve pylint issues with local module import
-	# poetry run pylint config chained_notes
+	poetry run ruff check
 
 format:
 	# python code
-	# TODO: solve formatting incompatibility between isort and black
-	# poetry run isort config chained_notes
-	poetry run black config chained_notes
+	poetry run ruff format
 
 	# yaml, json code
 	npm run format
 
 check-format:
 	# python code
-	# TODO: solve formatting incompatibility between isort and black
-	# poetry run isort config chained_notes --check
-	poetry run black config chained_notes --check
+	poetry run ruff format --check
 
 	# yaml, json code
 	npm run check-format
