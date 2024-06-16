@@ -1,0 +1,41 @@
+name: Update OpenAPI schema
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+
+jobs:
+  update-openapi-schema:
+    runs-on: ubuntu-latest
+    env:
+      OPENAPI_SCHEMA_FILE_PATH: chained_notes/infrastructure/api/schemas/openapi-schema.yml
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+
+      - name: Install poetry
+        run: pip install poetry
+
+      - name: Install poetry dependencies
+        run: poetry install
+
+      - name: Generate OpenAPI schema
+        run: |
+          make generate-openapi-schema
+          sed -i '1s/^/${{ env.OPENAPI_SCHEMA_FILE_HEADER }}\n\n/' ${{ env.OPENAPI_SCHEMA_FILE_PATH }}
+
+      - name: Commit and push changes
+        run: |
+          branch_name=${GITHUB_REF#refs/heads/}
+
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+          git add ${{ env.OPENAPI_SCHEMA_FILE_PATH }}
+          git commit -m "Update OpenAPI schema"
+
+          git push origin $branch_name
