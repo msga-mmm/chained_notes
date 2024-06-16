@@ -55,3 +55,18 @@ jobs:
 
       - name: Check types
         run: make check-types
+
+  check-openapi-schema:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+
+      - name: Install poetry
+        run: pip install poetry
+
+      - name: Install dependencies
+        run: poetry install
+
+      - name: Check types
+        run: make check-openapi-schema
