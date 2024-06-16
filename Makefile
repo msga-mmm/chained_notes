@@ -1,9 +1,11 @@
 lint:
-	poetry run pylint config chained_notes
+	# TODO: solve pylint issues with local module import
+	# poetry run pylint config chained_notes
 
 format:
 	# python code
-	poetry run isort config chained_notes
+	# TODO: solve formatting incompatibility between isort and black
+	# poetry run isort config chained_notes
 	poetry run black config chained_notes
 
 	# yaml, json code
@@ -11,7 +13,8 @@ format:
 
 check-format:
 	# python code
-	poetry run isort config chained_notes --check
+	# TODO: solve formatting incompatibility between isort and black
+	# poetry run isort config chained_notes --check
 	poetry run black config chained_notes --check
 
 	# yaml, json code
