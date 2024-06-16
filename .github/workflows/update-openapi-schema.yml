@@ -9,20 +9,7 @@ jobs:
   update-openapi-schema:
     runs-on: ubuntu-latest
     permissions:
-      actions: write
-      pages: write
-      checks: write
-      issues: write
       contents: write
-      id-token: write
-      packages: write
-      statuses: write
-      deployments: write
-      discussions: write
-      attestations: write
-      pull-requests: write
-      security-events: write
-      repository-projects: write
     env:
       OPENAPI_SCHEMA_FILE_PATH: chained_notes/infrastructure/api/schemas/openapi-schema.yml
     steps:
@@ -36,9 +23,7 @@ jobs:
         run: poetry install
 
       - name: Generate OpenAPI schema
-        run: |
-          make generate-openapi-schema
-          sed -i '1s/^/${{ env.OPENAPI_SCHEMA_FILE_HEADER }}\n\n/' ${{ env.OPENAPI_SCHEMA_FILE_PATH }}
+        run: make generate-openapi-schema
 
       - name: Commit and push changes
         run: |
@@ -49,6 +34,3 @@ jobs:
           git commit -m "Update OpenAPI schema"
 
           git push
-
-      # - name: Create Pull Request
-      #   uses: peter-evans/create-pull-request@v6
