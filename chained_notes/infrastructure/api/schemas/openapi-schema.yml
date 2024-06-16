@@ -8,142 +8,142 @@ paths:
     get:
       operationId: api_notes_list
       tags:
-      - api
+        - api
       security:
-      - jwtAuth: []
+        - jwtAuth: []
       responses:
-        '200':
+        "200":
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Note'
-          description: ''
+                  $ref: "#/components/schemas/Note"
+          description: ""
     post:
       operationId: api_notes_create
       tags:
-      - api
+        - api
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/NoteRequest'
+              $ref: "#/components/schemas/NoteRequest"
           application/x-www-form-urlencoded:
             schema:
-              $ref: '#/components/schemas/NoteRequest'
+              $ref: "#/components/schemas/NoteRequest"
           multipart/form-data:
             schema:
-              $ref: '#/components/schemas/NoteRequest'
+              $ref: "#/components/schemas/NoteRequest"
         required: true
       security:
-      - jwtAuth: []
+        - jwtAuth: []
       responses:
-        '201':
+        "201":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Note'
-          description: ''
+                $ref: "#/components/schemas/Note"
+          description: ""
   /api/notes/{id}/:
     get:
       operationId: api_notes_retrieve
       parameters:
-      - in: path
-        name: id
-        schema:
-          type: integer
-        description: A unique integer value identifying this note.
-        required: true
+        - in: path
+          name: id
+          schema:
+            type: integer
+          description: A unique integer value identifying this note.
+          required: true
       tags:
-      - api
+        - api
       security:
-      - jwtAuth: []
+        - jwtAuth: []
       responses:
-        '200':
+        "200":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Note'
-          description: ''
+                $ref: "#/components/schemas/Note"
+          description: ""
     put:
       operationId: api_notes_update
       parameters:
-      - in: path
-        name: id
-        schema:
-          type: integer
-        description: A unique integer value identifying this note.
-        required: true
+        - in: path
+          name: id
+          schema:
+            type: integer
+          description: A unique integer value identifying this note.
+          required: true
       tags:
-      - api
+        - api
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/NoteRequest'
+              $ref: "#/components/schemas/NoteRequest"
           application/x-www-form-urlencoded:
             schema:
-              $ref: '#/components/schemas/NoteRequest'
+              $ref: "#/components/schemas/NoteRequest"
           multipart/form-data:
             schema:
-              $ref: '#/components/schemas/NoteRequest'
+              $ref: "#/components/schemas/NoteRequest"
         required: true
       security:
-      - jwtAuth: []
+        - jwtAuth: []
       responses:
-        '200':
+        "200":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Note'
-          description: ''
+                $ref: "#/components/schemas/Note"
+          description: ""
     patch:
       operationId: api_notes_partial_update
       parameters:
-      - in: path
-        name: id
-        schema:
-          type: integer
-        description: A unique integer value identifying this note.
-        required: true
+        - in: path
+          name: id
+          schema:
+            type: integer
+          description: A unique integer value identifying this note.
+          required: true
       tags:
-      - api
+        - api
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/PatchedNoteRequest'
+              $ref: "#/components/schemas/PatchedNoteRequest"
           application/x-www-form-urlencoded:
             schema:
-              $ref: '#/components/schemas/PatchedNoteRequest'
+              $ref: "#/components/schemas/PatchedNoteRequest"
           multipart/form-data:
             schema:
-              $ref: '#/components/schemas/PatchedNoteRequest'
+              $ref: "#/components/schemas/PatchedNoteRequest"
       security:
-      - jwtAuth: []
+        - jwtAuth: []
       responses:
-        '200':
+        "200":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Note'
-          description: ''
+                $ref: "#/components/schemas/Note"
+          description: ""
     delete:
       operationId: api_notes_destroy
       parameters:
-      - in: path
-        name: id
-        schema:
-          type: integer
-        description: A unique integer value identifying this note.
-        required: true
+        - in: path
+          name: id
+          schema:
+            type: integer
+          description: A unique integer value identifying this note.
+          required: true
       tags:
-      - api
+        - api
       security:
-      - jwtAuth: []
+        - jwtAuth: []
       responses:
-        '204':
+        "204":
           description: No response body
 components:
   schemas:
@@ -158,9 +158,9 @@ components:
         body:
           type: string
       required:
-      - body
-      - id
-      - title
+        - body
+        - id
+        - title
     NoteRequest:
       type: object
       properties:
@@ -171,8 +171,8 @@ components:
           type: string
           minLength: 1
       required:
-      - body
-      - title
+        - body
+        - title
     PatchedNoteRequest:
       type: object
       properties:
