@@ -23,7 +23,7 @@ from drf_spectacular.views import (
     SpectacularSwaggerView,
 )
 
-from chained_notes.interfaces.api.urls import router
+from chained_notes.interfaces.api.urls.router import router
 
 urlpatterns = [
     path("admin/", admin.site.urls),
