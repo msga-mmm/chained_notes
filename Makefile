@@ -21,4 +21,17 @@ check-format:
 check-types:
 	poetry run pyright
 
-.PHONY: lint lint-fix format check-format check-types
+generate-openapi-schema:
+	# generate OpenAPI schema
+	poetry run python manage.py spectacular --color --file chained_notes/infrastructure/api/schemas/openapi-schema.yml
+
+	# format OpenAPI schema for consistent code diff
+	make format
+
+check-openapi-schema:
+	make generate-openapi-schema
+
+	git add chained_notes/infrastructure/api/schemas/openapi-schema.yml
+	git diff --cached --exit-code -- chained_notes/infrastructure/api/schemas/openapi-schema.yml
+
+.PHONY: lint lint-fix format check-format check-types generate-openapi-schema check-openapi-schema
