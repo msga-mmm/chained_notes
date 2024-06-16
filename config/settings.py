@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "rest_framework",
     "chained_notes.adapters.database",
+    "drf_spectacular",
 ]
 
 MIDDLEWARE = [
@@ -138,6 +139,7 @@ REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": [
         "rest_framework_simplejwt.authentication.JWTTokenUserAuthentication",
     ],
+    "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
 }
 
 # JWT
@@ -153,4 +155,14 @@ SIMPLE_JWT = {
     "USER_ID_CLAIM": "sub",
     "JTI_CLAIM": None,
     "TOKEN_TYPE_CLAIM": None,
+}
+
+# OpenAPI
+
+SPECTACULAR_SETTINGS = {
+    "TITLE": "Chained Notes API",
+    "DESCRIPTION": "An application for chained notes.",
+    "SERVE_INCLUDE_SCHEMA": False,
+    "VERSION": "1.0.0",
+    "COMPONENT_SPLIT_REQUEST": True,
 }
