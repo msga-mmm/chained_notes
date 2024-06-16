@@ -22,7 +22,11 @@ check-types:
 	poetry run pyright
 
 generate-openapi-schema:
+	# generate OpenAPI schema
 	poetry run python manage.py spectacular --color --file chained_notes/infrastructure/api/schemas/openapi-schema.yml
+
+	# format OpenAPI schema for consistent code diff
+	make format
 
 check-openapi-schema:
 	make generate-openapi-schema
