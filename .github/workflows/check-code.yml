@@ -68,5 +68,10 @@ jobs:
       - name: Install dependencies
         run: poetry install
 
+      - uses: actions/setup-node@v4
+
+      - name: Install npm dependencies
+        run: npm install
+
       - name: Check if OpenAPI schema is up to date
         run: make check-openapi-schema
