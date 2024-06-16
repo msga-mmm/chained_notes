@@ -30,13 +30,10 @@ jobs:
 
       - name: Commit and push changes
         run: |
-          # branch_name=${GITHUB_REF#refs/heads/}
-          branch_name=ci/no-ref/add-pipeline-to-update-openapi-schema-file
-
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
           git add ${{ env.OPENAPI_SCHEMA_FILE_PATH }}
           git commit -m "Update OpenAPI schema"
 
-          git push origin $branch_name
+          git push
