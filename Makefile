@@ -1,6 +1,9 @@
 lint:
 	poetry run ruff check
 
+lint-fix:
+	poetry run ruff check --fix
+
 format:
 	# python code
 	poetry run ruff format
@@ -18,4 +21,4 @@ check-format:
 check-types:
 	poetry run pyright
 
-.PHONY: lint format check-format check-types
+.PHONY: lint lint-fix format check-format check-types
