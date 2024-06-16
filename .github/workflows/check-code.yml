@@ -68,5 +68,5 @@ jobs:
       - name: Install dependencies
         run: poetry install
 
-      - name: Check types
+      - name: Check if OpenAPI schema is up to date
         run: make check-openapi-schema
