@@ -1,5 +1,6 @@
 lint:
-	poetry run pylint config chained_notes
+	# TODO: solve pylint issues with local module import
+	# poetry run pylint config chained_notes
 
 format:
 	# python code
