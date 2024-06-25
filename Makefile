@@ -34,4 +34,7 @@ check-openapi-schema:
 	git add chained_notes/infrastructure/api/schemas/openapi-schema.yml
 	git diff --cached --exit-code -- chained_notes/infrastructure/api/schemas/openapi-schema.yml
 
-.PHONY: lint lint-fix format check-format check-types generate-openapi-schema check-openapi-schema
+check-migrations:
+	poetry run python manage.py makemigrations --check
+
+.PHONY: lint lint-fix format check-format check-types generate-openapi-schema check-openapi-schema check-migrations
