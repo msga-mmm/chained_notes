@@ -88,5 +88,5 @@ jobs:
       - name: Install dependencies
         run: poetry install
 
-      - name: Check types
+      - name: Check migrations
         run: make check-migrations
