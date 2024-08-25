@@ -9,20 +9,20 @@ packages = []
 
 [tool.poetry.dependencies]
 python = "^3.10"
-Django = "^5.0.1"
+Django = "^5.1"
 django-environ = "^0.11.2"
-djangorestframework = "^3.14.0"
-psycopg = "^3.1.17"
-psycopg-binary = "^3.1.17"
+djangorestframework = "^3.15.2"
+psycopg = "^3.2.1"
+psycopg-binary = "^3.2.1"
 djangorestframework-simplejwt = "^5.3.1"
 drf-spectacular = "^0.27.2"
 
 
 [tool.poetry.group.dev.dependencies]
-pyright = "^1.1.349"
+pyright = "^1.1.377"
 django-types = "^0.19.1"
 djangorestframework-types = "^0.8.0"
-ruff = "^0.4.9"
+ruff = "^0.6.2"
 
 [build-system]
 requires = ["poetry-core"]
