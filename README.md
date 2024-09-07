@@ -29,9 +29,9 @@ A server for chained notes.
 
 3. Run the migrations to create all the required tables.
 
-```sh
-docker compose exec application python manage.py migrate
-```
+   ```sh
+   docker compose exec application python manage.py migrate
+   ```
 
 4. After all the services have started and the migrations have been applied the following links will be accessible.
 
@@ -43,16 +43,16 @@ docker compose exec application python manage.py migrate
 
 5. To see the logs of the containers the following command be used:
 
-```sh
-# see all the service logs
-docker compose logs
+   ```sh
+   # see all the service logs
+   docker compose logs
 
-# see all the service logs and keep watching for new logs
-docker compose logs --follow
+   # see all the service logs and keep watching for new logs
+   docker compose logs --follow
 
-# see the logs of a specific service
-docker compose logs application
+   # see the logs of a specific service
+   docker compose logs application
 
-# see the logs of a specific service and keep watching for new logs
-docker compose logs application --follow
-```
+   # see the logs of a specific service and keep watching for new logs
+   docker compose logs application --follow
+   ```
