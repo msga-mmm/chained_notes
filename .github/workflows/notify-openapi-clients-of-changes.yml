@@ -1,0 +1,21 @@
+name: Notify OpenAPI clients of changes
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - chained_notes/infrastructure/api/schemas/openapi-schema.yml
+
+jobs:
+  notify-openapi-clients-of-changes:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Repository Dispatch
+        uses: peter-evans/repository-dispatch@v3
+        with:
+          token: ${{ secrets.PAT }}
+          repository: msga-mmm/chained-notes-web
+          event-type: openapi-schema-has-changed
