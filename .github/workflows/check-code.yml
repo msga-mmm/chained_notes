@@ -75,3 +75,18 @@ jobs:
 
       - name: Check if OpenAPI schema is up to date
         run: make check-openapi-schema
+
+  check-migrations:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+
+      - name: Install poetry
+        run: pip install poetry
+
+      - name: Install dependencies
+        run: poetry install
+
+      - name: Check migrations
+        run: make check-migrations
