@@ -2,6 +2,8 @@ name: Notify OpenAPI clients of changes
 
 on:
   push:
+    branches:
+      - main
     paths:
       - chained_notes/infrastructure/api/schemas/openapi-schema.yml
 
