@@ -2,7 +2,7 @@ openapi: 3.0.3
 info:
   title: Chained Notes API
   version: 1.0.0
-  description: An application for chained notes....
+  description: An application for chained notes.
 paths:
   /api/notes/:
     get:
@@ -155,6 +155,7 @@ components:
           readOnly: true
         title:
           type: string
+          maxLength: 255
         body:
           type: string
       required:
@@ -167,6 +168,7 @@ components:
         title:
           type: string
           minLength: 1
+          maxLength: 255
         body:
           type: string
           minLength: 1
@@ -179,6 +181,7 @@ components:
         title:
           type: string
           minLength: 1
+          maxLength: 255
         body:
           type: string
           minLength: 1
