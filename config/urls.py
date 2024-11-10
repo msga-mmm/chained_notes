@@ -26,19 +26,19 @@ from drf_spectacular.views import (
 from chained_notes.interfaces.api.urls.router import router
 
 urlpatterns = [
-    path("admin/", admin.site.urls),
+    path("api/admin/", admin.site.urls),
     path("api/", include(router.urls)),
     # Route to download documentation in OpenAPI yaml format:
-    path("doc/schema/", SpectacularAPIView.as_view(), name="schema"),
+    path("api/doc/schema/", SpectacularAPIView.as_view(), name="schema"),
     # Documentation with Swagger
     path(
-        "doc/schema/swagger-ui/",
+        "api/doc/schema/swagger-ui/",
         SpectacularSwaggerView.as_view(url_name="schema"),
         name="swagger-ui",
     ),
     # Documentation with Redoc
     path(
-        "doc/schema/redoc/",
+        "api/doc/schema/redoc/",
         SpectacularRedocView.as_view(url_name="schema"),
         name="redoc",
     ),

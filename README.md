@@ -7,6 +7,8 @@ A server for chained notes.
 ### Dependencies
 
 - [docker compose](https://docs.docker.com/compose/install/)
+- [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+- [mkcert](https://github.com/FiloSottile/mkcert#installation)
 
 ### Getting started
 
@@ -17,7 +19,17 @@ A server for chained notes.
    cd chained-notes-web
    ```
 
-2. Start all the docker compose services:
+2. Create local SSl certificate to be able to run the application in https locally for development and production parity https://12factor.net/dev-prod-parity.
+
+  ```sh
+  # change directory where the certificate and key will be created
+  cd nginx/ssl
+
+  # create SSL certificate and key for `localhost`
+  mkcert -install -key-file dev.pem -cert-file cert.pem localhost
+  ```
+
+3. Start all the docker compose services:
 
    ```sh
    # start the services
@@ -27,21 +39,21 @@ A server for chained notes.
    docker compose up --detach
    ```
 
-3. Run the migrations to create all the required tables.
+4. Run the migrations to create all the required tables.
 
    ```sh
    docker compose exec application python manage.py migrate
    ```
 
-4. After all the services have started and the migrations have been applied the following links will be accessible.
+5. After all the services have started and the migrations have been applied the following links will be accessible.
 
-   - Django admin: http://localhost:8000/admin/
-   - Django rest framework interface: http://localhost:8000/api/
-   - Download yaml OpenAPI schema: http://localhost:8000/doc/schema/
-   - Swagger UI: http://localhost:8000/doc/schema/swagger-ui/
-   - Redoc UI: http://localhost:8000/doc/schema/redoc/
+   - Django admin: https://localhost/api/admin/
+   - Django rest framework interface: https://localhost/api/
+   - Download yaml OpenAPI schema: https://localhost/api/doc/schema/
+   - Swagger UI: https://localhost/api/doc/schema/swagger-ui/
+   - Redoc UI: https://localhost/api/doc/schema/redoc/
 
-5. To see the logs of the containers the following command be used:
+6. To see the logs of the containers the following command be used:
 
    ```sh
    # see all the service logs
