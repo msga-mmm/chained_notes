@@ -9,6 +9,7 @@ on:
     branches:
       - "main"
 
+# TODO: add multiplatform images: https://docs.docker.com/build/ci/github-actions/multi-platform/
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
