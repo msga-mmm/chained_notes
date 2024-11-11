@@ -1,0 +1,11 @@
+# Excludes all the files
+*
+
+# Keeps only the necessary files to minimize docker image size
+!pyproject.toml
+!poetry.lock
+!.dockerignore
+!manage.py
+!chained_notes/**/*.py
+!chained_notes/**/*.yml
+!config/*.py
