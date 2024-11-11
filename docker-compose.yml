@@ -21,9 +21,12 @@ services:
   application:
     build: .
     container_name: ${APPLICATION_CONTAINER_NAME}
-    command: python manage.py runserver 0.0.0.0:8000
-    ports:
-      - ${APPLICATION_PORT}:8000
+    command:
+      - sh
+      - -c
+      - |
+        python manage.py migrate
+        python manage.py runserver 0.0.0.0:80
     volumes:
       - ./:/app
     env_file:
@@ -31,6 +34,23 @@ services:
     environment:
       # avoid output buffering for realtime logging
       PYTHONUNBUFFERED: 1
+
+      CSRF_TRUSTED_ORIGIN: "https://localhost"
     depends_on:
       database:
         condition: service_healthy
+
+  nginx:
+    image: nginx:latest
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      # Nginx configuration
+      - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf
+
+      # SSL configuration
+      - ./nginx/ssl/cert.pem:/etc/nginx/ssl/cert.pem
+      - ./nginx/ssl/dev.pem:/etc/nginx/ssl/dev.pem
+    depends_on:
+      - application

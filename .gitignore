@@ -35,3 +35,6 @@ logs/
 
 # JavaScript/TypeScript packages
 node_modules
+
+# SSL certificate and key for local development
+nginx/ssl/*
