@@ -21,13 +21,13 @@ A server for chained notes.
 
 2. Create local SSl certificate to be able to run the application in https locally for development and production parity https://12factor.net/dev-prod-parity.
 
-  ```sh
-  # change directory where the certificate and key will be created
-  cd nginx/ssl
+   ```sh
+   # change directory where the certificate and key will be created
+   cd nginx/ssl
 
-  # create SSL certificate and key for `localhost`
-  mkcert -install -key-file dev.pem -cert-file cert.pem localhost
-  ```
+   # create SSL certificate and key for `localhost`
+   mkcert -install -key-file dev.pem -cert-file cert.pem localhost
+   ```
 
 3. Start all the docker compose services:
 

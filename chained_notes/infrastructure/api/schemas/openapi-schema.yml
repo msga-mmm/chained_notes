@@ -6,9 +6,9 @@ info:
 paths:
   /api/notes/:
     get:
-      operationId: api_notes_list
+      operationId: notes_list
       tags:
-        - api
+        - notes
       security:
         - jwtAuth: []
       responses:
@@ -21,9 +21,9 @@ paths:
                   $ref: "#/components/schemas/Note"
           description: ""
     post:
-      operationId: api_notes_create
+      operationId: notes_create
       tags:
-        - api
+        - notes
       requestBody:
         content:
           application/json:
@@ -47,7 +47,7 @@ paths:
           description: ""
   /api/notes/{id}/:
     get:
-      operationId: api_notes_retrieve
+      operationId: notes_retrieve
       parameters:
         - in: path
           name: id
@@ -56,7 +56,7 @@ paths:
           description: A unique integer value identifying this note.
           required: true
       tags:
-        - api
+        - notes
       security:
         - jwtAuth: []
       responses:
@@ -67,7 +67,7 @@ paths:
                 $ref: "#/components/schemas/Note"
           description: ""
     put:
-      operationId: api_notes_update
+      operationId: notes_update
       parameters:
         - in: path
           name: id
@@ -76,7 +76,7 @@ paths:
           description: A unique integer value identifying this note.
           required: true
       tags:
-        - api
+        - notes
       requestBody:
         content:
           application/json:
@@ -99,7 +99,7 @@ paths:
                 $ref: "#/components/schemas/Note"
           description: ""
     patch:
-      operationId: api_notes_partial_update
+      operationId: notes_partial_update
       parameters:
         - in: path
           name: id
@@ -108,7 +108,7 @@ paths:
           description: A unique integer value identifying this note.
           required: true
       tags:
-        - api
+        - notes
       requestBody:
         content:
           application/json:
@@ -130,7 +130,7 @@ paths:
                 $ref: "#/components/schemas/Note"
           description: ""
     delete:
-      operationId: api_notes_destroy
+      operationId: notes_destroy
       parameters:
         - in: path
           name: id
@@ -139,7 +139,7 @@ paths:
           description: A unique integer value identifying this note.
           required: true
       tags:
-        - api
+        - notes
       security:
         - jwtAuth: []
       responses:
