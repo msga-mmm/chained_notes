@@ -37,4 +37,5 @@ logs/
 node_modules
 
 # SSL certificate and key for local development
-nginx/ssl/*
+nginx/ssl/cert.pem
+nginx/ssl/dev.pem
