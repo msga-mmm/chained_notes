@@ -10,6 +10,7 @@ on:
       - "main"
 
 # TODO: add multiplatform images: https://docs.docker.com/build/ci/github-actions/multi-platform/
+# TODO: use docker build cache: https://docs.docker.com/build/cache/backends/
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
@@ -42,5 +43,3 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
-          cache-from: type=gha
-          cache-to: type=gha,mode=max
