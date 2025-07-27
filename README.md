@@ -46,7 +46,6 @@ A server for chained notes.
    ```
 
 5. After all the services have started and the migrations have been applied the following links will be accessible.
-
    - Django admin: https://localhost/api/admin/
    - Django rest framework interface: https://localhost/api/
    - Download yaml OpenAPI schema: https://localhost/api/doc/schema/
